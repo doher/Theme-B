@@ -23,11 +23,7 @@ while (!isFinite(num)) {
 }
 
 if (num in count) {
-    if ((count[num] >= 2) && (count[num] <= 4)) {
-        console.log('Число ' + num + ' встретилось ' + count[num] +  ' раза!');
-    } else {
-        console.log('Число ' + num + ' встретилось ' + count[num] +  ' раз!');
-    }    
+    console.log('Число ' + num + ' встретилось ' + count[num] + ((count[num] >= 2) && (count[num] <= 4) ? ' раза!' : ' раз!'));
 } else {
     console.log('Число не найдено!');
 }
