@@ -1,53 +1,32 @@
 'use strict';
 
-var surname,
-    firstName,
-    fatherName,
-    age,
-    genderMale,
-    ageInDays,
-    ageInFuture,
-    gender,
-    isRetired,
-    personInformation = {};
+var personInformation = {};
 
-while (!surname) {
-    surname = prompt("Enter your surname:").trim();
+while (!personInformation.surname) {
+    personInformation.surname = prompt("Enter your surname:").trim();
 }
 
-while (!firstName) {
-    firstName = prompt("Enter your first name:").trim();
+while (!personInformation.firstName) {
+    personInformation.firstName = prompt("Enter your first name:").trim();
 }
 
-while (!fatherName) {
-    fatherName = prompt("Enter your father's name:").trim();
+while (!personInformation.fatherName) {
+    personInformation.fatherName = prompt("Enter your father's name:").trim();
 }
 
-while (!isFinite(age) || age < 0) {
-    age = +prompt("Enter your age:");
+while (!isFinite(personInformation.age) || personInformation.age < 0) {
+    personInformation.age = +prompt("Enter your age:");
 }
 
-ageInDays = age * 365;
-ageInFuture = age + 5;
+personInformation.ageInDays = personInformation.age * 365;
+personInformation.ageInFuture = personInformation.age + 5;
 
-genderMale = confirm("Are you male?");
+personInformation.genderMale = confirm("Are you male?");
 
-gender = genderMale ? "male" : "female";
+personInformation.gender = personInformation.genderMale ? "male" : "female";
 
-if ( ( (gender == "male") && (age >= 60)) || ( (gender == "female") && (age >= 55))) {
-    isRetired = "yes";
-} else {
-    isRetired = "no";
-}
-
-personInformation.surname = surname;
-personInformation.firstName = firstName;
-personInformation.fatherName = fatherName;
-personInformation.age = age;
-personInformation.ageInDays = ageInDays;
-personInformation.ageInFuture = ageInFuture;
-personInformation.gender = gender;
-personInformation.isRetired = isRetired;
+personInformation.isRetired = (((personInformation.gender == "male") && (personInformation.age >= 60)) ||
+                              ((personInformation.gender == "female") && (personInformation.age >= 55))) ? "yes" : "no";
 
 alert("Your full name: " + personInformation.surname + ' ' + personInformation.firstName + ' ' + personInformation.fatherName +
     "\nYour age: " + personInformation.age +
