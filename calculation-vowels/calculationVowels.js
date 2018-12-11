@@ -1,23 +1,27 @@
 'use strict';
 
 function getCountVowels(phrase) {
-    return function counter() {
-        let count = 0;
+    let phraseLength = phrase.length;
+    phrase = phrase.toLowerCase();
 
-        for (let i = 0; i < phrase.length; i++) {
-            switch (phrase.toLowerCase()[i]) {
-                case 'а':
-                case 'е':
-                case 'ё':
-                case 'о':
-                case 'и':
-                case 'э':
-                case 'у':
-                case 'ы':
-                case 'я':
-                case 'ю':
-                    count++;
-                    break;
+    return function counter() {
+        let vowels = {
+                'a': 0,
+                'е': 0,
+                'ё': 0,
+                'о': 0,
+                'и': 0,
+                'э': 0,
+                'у': 0,
+                'ы': 0,
+                'я': 0,
+                'ю': 0
+            },
+            count = 0;
+
+        for (let i = 0; i < phraseLength; i++) {
+            if (phrase[i] in vowels) {
+                count++;
             }
         }
 
