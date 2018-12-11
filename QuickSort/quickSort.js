@@ -1,5 +1,6 @@
 function quickSort(array) {
-    if (array.length <= 1) {
+    let lengthArray = array.length;
+    if (lengthArray <= 1) {
         return array;
     }
 
@@ -8,7 +9,7 @@ function quickSort(array) {
         leftArray = [],
         rightArray = [];
 
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < (lengthArray - 1); i++) {
         if (pivot >= array[i]) {
             leftArray.push(array[i])
         } else {
