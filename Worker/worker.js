@@ -2,7 +2,7 @@
 
 class Worker {
     constructor(name, surname, rate, days) {
-        var _name = name,
+        let _name = name,
             _surname = surname,
             _rate = rate,
             _days = days;
