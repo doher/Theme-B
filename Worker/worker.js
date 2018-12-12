@@ -37,10 +37,10 @@ class Worker {
     }
 }
 
-var worker1 = new Worker('Alex', 'Petrov', 0, 0);
-var worker2 = new Worker();
+let worker1 = new Worker('Alex', 'Petrov', 0, 0);
+let worker2 = new Worker();
 
-worker1.setRate(160);
+worker1.setRate(80);
 worker1.setDays(21);
 
 console.log('Зарплата первого рабочего, к выдачи: ', worker1.getSalary());
